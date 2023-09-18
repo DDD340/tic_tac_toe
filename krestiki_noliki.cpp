@@ -9,10 +9,13 @@ int get_game_state(field) {
         (field[0][1] == field[1][1] and field[1][1] == field[2][1]) or
         (field[0][2] == field[1][2] and field[1][2] == field[2][2]) or
         (field[0][0] == field[1][1] and field[1][1] == field[2][2]) or
-        (field[0][2] == field[1][1] and field[1][1] == field[2][0])) {
-        return 1;
+        (field[0][2] == field[1][1] and field[1][1] == field[2][0]) or
+        (field[0][0] != 0 and field[0][1] != 0 and field[0][2] != 0 and
+        field[1][0] != 0 and field[1][1] != 0 and field[1][2] != 0 and
+        field[2][0] != 0 and field[2][1] != 0 and field[2][2] != 0)) {
+        return 0;
     }
-    return 0;
+    return 1;
 }
 
 
@@ -34,6 +37,13 @@ void Print_Game_Field(int gameField[3][3]){
         }
         std::cout << std::endl << "  _______" << std::endl;
     }
+}
+
+
+void player_turn(field) {
+    int x, y;
+    std::cin >> x >> y;
+    field[x][y] = 1;
 }
 
 
