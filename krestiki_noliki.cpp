@@ -52,5 +52,15 @@ int main(){
     {0, 0, 0},
     {0, 1, 0},
     {0, 0, 0}};
-    Print_Game_Field(gameField);
+    while (get_game_state) {
+        std::cout << "Ход Игрока:\n";
+        player_turn(gameField);
+        Print_Game_Field(gameField);
+        if (get_game_state != 1) {
+            std::cout << "Игра Окончена\n";
+            break;
+        }
+        std::cout << "Ход ИИ:\n";
+        Print_Game_Field(gameField);
+    }
 }
