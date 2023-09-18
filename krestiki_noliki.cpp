@@ -61,6 +61,7 @@ int main(){
             break;
         }
         std::cout << "Ход ИИ:\n";
+        // ai_turn(gameField);
         Print_Game_Field(gameField);
     }
 }
